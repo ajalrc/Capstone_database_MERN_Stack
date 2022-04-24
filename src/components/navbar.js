@@ -18,9 +18,8 @@ export default function Navbar() {
         </NavLink>
 
         <a
-          href="/#"
-          className="navbar-brand"
           onClick={() => window.open("https://www.drake.edu/cs/")}
+          className="navbar-brand"
         >
           <div className="header">
             Department of Computer Science and Mathematics
