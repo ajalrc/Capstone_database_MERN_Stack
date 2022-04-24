@@ -18,7 +18,7 @@ export default function Navbar() {
         </NavLink>
 
         <a
-          href="#"
+          href="/#"
           className="navbar-brand"
           onClick={() => window.open("https://www.drake.edu/cs/")}
         >
