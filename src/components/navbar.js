@@ -12,7 +12,7 @@ export default function Navbar() {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <NavLink className="navbar-brand" to="/">
           <img
-            //style={{ width: 25 + "%" }}
+            alt = "Drake University"
             src="https://images.squarespace-cdn.com/content/v1/57961f422994cace5cc0e6a2/1599877840153-OSQYFX9GFVU4BI1IVQP0/Drake+University+Logo+copy.png"
           ></img>
         </NavLink>
