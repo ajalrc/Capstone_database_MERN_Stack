@@ -7,12 +7,11 @@ const Record = (props) => (
     <td>{props.record.group_names}</td>
     <td>{props.record.description}</td>
     <td>
-      <a
-        href="#"
+      <div
         onClick={() => window.open(`${props.record.presentation_link}`)}
       >
         {props.record.presentation_link}
-      </a>
+      </div>
     </td>
     <td>
       <Link className="btn btn-link" to={`/edit/${props.record._id}`}>
