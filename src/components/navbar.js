@@ -17,14 +17,10 @@ export default function Navbar() {
           ></img>
         </NavLink>
 
-        <a
-          onClick={() => window.open("https://www.drake.edu/cs/")}
-          className="navbar-brand"
-        >
-          <div className="header">
-            Department of Computer Science and Mathematics
-          </div>
-        </a>
+        <div className="header">
+          Department of Computer Science and Mathematics
+        </div>
+
         <button
           className="navbar-toggler "
           type="button"
