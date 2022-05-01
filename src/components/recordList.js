@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+require("dotenv").config({ path: "./config.env" });
+const port = process.env.PORT || 5000;
 
 const Record = (props) => (
   <tr>
@@ -7,9 +9,7 @@ const Record = (props) => (
     <td>{props.record.group_names}</td>
     <td>{props.record.description}</td>
     <td>
-      <div
-        onClick={() => window.open(`${props.record.presentation_link}`)}
-      >
+      <div onClick={() => window.open(`${props.record.presentation_link}`)}>
         {props.record.presentation_link}
       </div>
     </td>
@@ -36,7 +36,9 @@ export default function RecordList() {
   // This method fetches the records from the database.
   useEffect(() => {
     async function getRecords() {
-      const response = await fetch(`http://localhost:5000/record/`);
+      const response = await fetch(
+        `https://server-capstone-recorder.herokuapp.com/record/`
+      );
 
       if (!response.ok) {
         const message = `An error occured: ${response.statusText}`;
@@ -52,7 +54,7 @@ export default function RecordList() {
 
   // This method will delete a record
   async function deleteRecord(id) {
-    await fetch(`http://localhost:5000/${id}`, {
+    await fetch(`https://server-capstone-recorder.herokuapp.com/${id}`, {
       method: "DELETE",
     });
 
@@ -76,7 +78,9 @@ export default function RecordList() {
   // This following section will display the table with the records of individuals.
   return (
     <div>
-      <h3 className= "table-header">Student capstones for Mathematics and Computer Science</h3>
+      <h3 className="table-header">
+        Student capstones for Mathematics and Computer Science
+      </h3>
       <table className="table table-striped" style={{ marginTop: 20 }}>
         <thead>
           <tr>

@@ -16,7 +16,7 @@ export default function Edit() {
     async function fetchData() {
       const id = params.id.toString();
       const response = await fetch(
-        `http://localhost:5000/record/${params.id.toString()}`
+        `https://server-capstone-recorder.herokuapp.com/record/${params.id.toString()}`
       );
 
       if (!response.ok) {
@@ -50,17 +50,20 @@ export default function Edit() {
       capstone: form.capstone,
       group_names: form.group_names,
       description: form.description,
-      presentation_link: form.presentation_link
+      presentation_link: form.presentation_link,
     };
 
     // This will send a post request to update the data in the database.
-    await fetch(`http://localhost:5000/update/${params.id}`, {
-      method: "POST",
-      body: JSON.stringify(editedCapstone),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    await fetch(
+      `https://server-capstone-recorder.herokuapp.com/update/${params.id}`,
+      {
+        method: "POST",
+        body: JSON.stringify(editedCapstone),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     navigate("/");
   }
