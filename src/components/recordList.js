@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 require("dotenv").config({ path: "./config.env" });
-const port = process.env.PORT || 5000;
+//const port = process.env.PORT || 5000;
 
 const Record = (props) => (
   <tr>
