@@ -9,7 +9,10 @@ const Record = (props) => (
     <td>{props.record.group_names}</td>
     <td>{props.record.description}</td>
     <td>
-      <a href="#" onClick={() => window.open(`${props.record.presentation_link}`)}>
+      <a
+        href="#top"
+        onClick={() => window.open(`${props.record.presentation_link}`)}
+      >
         {props.record.presentation_link}
       </a>
     </td>
