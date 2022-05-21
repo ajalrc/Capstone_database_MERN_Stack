@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 require("dotenv").config({ path: "./config.env" });
 //const port = process.env.PORT || 5000;
 
@@ -19,13 +19,13 @@ const Record = (props) => (
     <td>
       {/*Here instead of "a" tag, you can also use Link tag but replace href
       with "to". I used "a" tag because it was easier for it to disable it.*/}
-      <a
+      <NavLink
         className="btn btn-link"
         id="disableLink"
-        href={`/edit/${props.record._id}`}
+        to={`/edit/${props.record._id}`}
       >
         Edit
-      </a>{" "}
+      </NavLink>{" "}
       |
       <button
         className="btn btn-link"
