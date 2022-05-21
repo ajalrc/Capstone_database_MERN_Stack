@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.css";
 // We import NavLink to utilize the react router.
 import { NavLink } from "react-router-dom";
 
+
 // Here, we display our Navbar
 export default function Navbar() {
   return (
@@ -39,8 +40,13 @@ export default function Navbar() {
         >
           <ul className="navbar-nav ml-right">
             <li className="nav-item active">
-              <NavLink className="nav-link" to="/create">
-                Capstone Record
+              <NavLink
+                id="disableLink"
+                className="nav-link"
+                to="/create"
+                disabled
+              >
+                Create new Record
               </NavLink>
             </li>
           </ul>

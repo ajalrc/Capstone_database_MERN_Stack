@@ -17,15 +17,22 @@ const Record = (props) => (
       </a>
     </td>
     <td>
-      <Link className="btn btn-link" to={`/edit/${props.record._id}`}>
+      {/*Here instead of "a" tag, you can also use Link tag but replace href
+      with "to". I used "a" tag because it was easier for it to disable it.*/}
+      <a
+        className="btn btn-link"
+        id="disableLink"
+        href={`/edit/${props.record._id}`}
+      >
         Edit
-      </Link>{" "}
+      </a>{" "}
       |
       <button
         className="btn btn-link"
         onClick={() => {
           props.deleteRecord(props.record._id);
         }}
+        disabled
       >
         Delete
       </button>
@@ -83,6 +90,9 @@ export default function RecordList() {
     <div>
       <h3 className="table-header">
         Student capstones for Mathematics and Computer Science
+        <p>
+          <small>Only admin can create, edit or delete a new record</small>
+        </p>
       </h3>
       <table className="table table-striped" style={{ marginTop: 20 }}>
         <thead>

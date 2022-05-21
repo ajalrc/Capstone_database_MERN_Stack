@@ -13,6 +13,7 @@ export default function Create() {
   // These methods will update the state properties.
   function updateForm(value) {
     return setForm((prev) => {
+      console.log(prev);
       return { ...prev, ...value };
     });
   }
@@ -91,7 +92,8 @@ export default function Create() {
             className="form-control"
             id="presentation_link"
             value={form.presentation_link}
-            pattern="http(s?)(:\/\/) +(drakeedu-my.sharepoint)+(.com)+*((:\/\/) | [a-zA-z0-9\-_]))"
+            //https://drakeedu-my.sharepoint.com/:p:/g/personal/timothy_urness_drake_edu/ERFiWM1wFERLr6Iy74dXHqIBNvPt0xsTPOow9ndRE1whrQ?e=4%3AcDlT9q&at=9&CID=f3aa3c98-25c2-7202-fff3-549cde0b7b0c
+            //pattern="http(s?)(:\/\/)(drakeedu-my.sharepoint.com(:\/\/):p:(:\/\/)g(:\/\/)personal(:\/\/)timothy_urness_drake_edu)+ [a-zA-Z0-9@:%._\\+~#?&//=]{2,256}"
             placeholder="https://google.com"
             required
             onChange={(e) => updateForm({ presentation_link: e.target.value })}
